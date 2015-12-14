@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CHAT</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" type="image/png" href="http://antoni-matusz.com/images/favicon.png">
+	<base href="/">
+	<style>
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }  
+    </style>
+</head>
+<body ng-app="app" ng-cloak>
+
+<div id="chat">
+	<h1>Chat rekrutacyjny</h1>
+	<div ng-view="" autoscroll="true"></div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="app/app.js"></script>
+</body>
+</html>

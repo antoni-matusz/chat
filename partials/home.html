@@ -1,0 +1,8 @@
+<div class="chat-content">
+	<h2>Wybierz login</h2>
+	<form ng-submit="startChat(login)">
+		<input type="text" placeholder="Login" ng-model="login" required>
+		<p ng-if="validInfo">{{validInfo}}</p>
+		<input ng-disabled="validInfo" type="submit" value="Wejdź na czat">
+	</form>
+</div>

@@ -1,0 +1,33 @@
+<div class="chat-content">
+	<h2>Jesteś zalogowany jako <strong>{{login}}</strong></h2>
+	<p ng-if="chat.length === 0 || chat === null || chat === undefined">Brak wiadomości</p>
+	<ul ng-if="chat.length > 0">
+		<li ng-repeat="x in chat">
+		<div class="box" ng-if="login == x.nick && getColor == x.nick_color">
+			<div class="right">
+				<div class="circle" style="background-color: #{{x.nick_color}};">{{x.nick | limitTo: 1}}</div>
+			</div>
+			<div class="left">
+				<div class="nickName nickNameMe" style="color: #{{x.nick_color}};">{{x.nick}} [ja]</div>
+				<div class="messageDate">dodano: {{x.created_at}}</div>
+				<div class="messageTxt messageTxtMe">{{x.message}}</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="box" ng-if="login != x.nick && getColor != x.nick_color">
+			<div class="left">
+				<div class="messageDate">dodano: {{x.created_at}}</div>
+				<div class="nickName" style="color: #{{x.nick_color}};">{{x.nick}}</div>
+				<div class="messageTxt">{{x.message}}</div>
+				<div class="clear"></div>
+			</div>
+			<div class="right">
+				<div class="circle" style="background-color: #{{x.nick_color}};">{{x.nick | limitTo: 1}}</div>
+			</div>
+		</div>	
+		</li>
+	</ul>
+		<div class="clear"></div>
+		<textarea id="textAreaScroll" ng-model="message" ng-enter="addMessage(message)" placeholder="Wpisz wiadomość"></textarea>
+		<p ng-if="validInfo">{{validInfo}}</p>
+</div>
